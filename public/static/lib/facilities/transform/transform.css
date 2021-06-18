@@ -1,0 +1,26 @@
+.model-transformer .input-trans {
+  border: 1px solid #dedede;
+  width: 20%;
+  padding: 2px 0 0 4px;
+  background: #eaeaea;
+  border-radius: 4px;
+  margin: 0 0 6px 5px;
+  overflow: hidden;
+  text-align: left;
+  color: #000000;
+  height: 26px;
+  display: inline-block;
+}
+.model-transformer {
+  height: 100%;
+}
+.row {
+  display: flex;
+  align-items: center;
+  padding-right: 4px;
+}
+.row span {
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+}

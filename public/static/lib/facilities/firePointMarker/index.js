@@ -1,0 +1,1 @@
+import{FirePointManager}from"./fireBufferGeometry";function addFire(e){new THREE.Clock;let i=new FirePointManager(e);i.addFirePointWithDefaultSize(1,new THREE.Vector3(134.75650454244348,90.62051369064886,328.0840034484863)),i.addFirePointWithDefaultSize(2,new THREE.Vector3(105.12953413741175,107.12754027977971,328.0840034484863)),window.manager=i}window.addFire=addFire;

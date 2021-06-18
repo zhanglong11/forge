@@ -1,0 +1,1 @@
+function getCylicalIndex(t,e){if(t=parseInt(t),0===e)return 0;if(t<0){for(;t<0;)t+=e;return t}return t%e}export class CylicalList extends Array{getFromIndex(t){let e=parseInt(t);return isNaN(e)?this[t]:this[getCylicalIndex(e,this.length)]}}

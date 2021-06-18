@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<exchange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" units="m" filename="整体.rvt" filepath="F:\碰撞">
+  <batchtest name="Report" internal_name="Report" units="m">
+    <clashtests>
+      <clashtest name="测试 1" test_type="hard" status="ok" tolerance="0.001" merge_composites="1">
+        <linkage mode="none"/>
+        <rules/>
+        <summary total="4" new="4" active="0" reviewed="0" approved="0" resolved="0">
+          <testtype>硬碰撞</testtype>
+          <teststatus>确定</teststatus>
+        </summary>
+        <clashresults>
+          <clashresult name="碰撞1" guid="1b7c2fc0-7165-44dc-9273-9b84975b9c03" href="4个碰撞_files\cd000001.jpg" status="new" distance="-0.258">
+            <description>硬碰撞</description>
+            <resultstatus>新建</resultstatus>
+            <clashpoint>
+              <pos3f x="9.118" y="-0.706" z="2.698"/>
+            </clashpoint>
+            <createddate>
+              <date year="2020" month="3" day="31" hour="6" minute="51" second="0"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>元素 ID</name>
+                  <value>313234</value>
+                </objectattribute>
+                <layer>标高 1</layer>
+                <smarttags>
+                  <smarttag>
+                    <name>项目 名称</name>
+                    <value>基本墙</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>项目 类型</name>
+                    <value>墙: 基本墙: 常规 - 200mm</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>元素 ID</name>
+                  <value>313586</value>
+                </objectattribute>
+                <layer>标高 3</layer>
+                <smarttags>
+                  <smarttag>
+                    <name>项目 名称</name>
+                    <value>管道类型</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>项目 类型</name>
+                    <value>管道: 管道类型: 默认</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="碰撞2" guid="a51d28dd-090c-46b4-b4b2-aed4c524cd60" href="4个碰撞_files\cd000002.jpg" status="new" distance="-0.202">
+            <description>硬碰撞</description>
+            <resultstatus>新建</resultstatus>
+            <clashpoint>
+              <pos3f x="8.918" y="4.763" z="2.822"/>
+            </clashpoint>
+            <createddate>
+              <date year="2020" month="3" day="31" hour="6" minute="51" second="0"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>元素 ID</name>
+                  <value>313234</value>
+                </objectattribute>
+                <layer>标高 1</layer>
+                <smarttags>
+                  <smarttag>
+                    <name>项目 名称</name>
+                    <value>基本墙</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>项目 类型</name>
+                    <value>墙: 基本墙: 常规 - 200mm</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>元素 ID</name>
+                  <value>313584</value>
+                </objectattribute>
+                <layer>标高 3</layer>
+                <smarttags>
+                  <smarttag>
+                    <name>项目 名称</name>
+                    <value>管道类型</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>项目 类型</name>
+                    <value>管道: 管道类型: 默认</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="碰撞3" guid="fe49c910-0c3d-42f5-8272-677bb401f3e5" href="4个碰撞_files\cd000003.jpg" status="new" distance="-0.189">
+            <description>硬碰撞</description>
+            <resultstatus>新建</resultstatus>
+            <clashpoint>
+              <pos3f x="-6.282" y="4.763" z="2.664"/>
+            </clashpoint>
+            <createddate>
+              <date year="2020" month="3" day="31" hour="6" minute="51" second="0"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>元素 ID</name>
+                  <value>313092</value>
+                </objectattribute>
+                <layer>标高 1</layer>
+                <smarttags>
+                  <smarttag>
+                    <name>项目 名称</name>
+                    <value>基本墙</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>项目 类型</name>
+                    <value>墙: 基本墙: 常规 - 200mm</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>元素 ID</name>
+                  <value>313584</value>
+                </objectattribute>
+                <layer>标高 3</layer>
+                <smarttags>
+                  <smarttag>
+                    <name>项目 名称</name>
+                    <value>管道类型</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>项目 类型</name>
+                    <value>管道: 管道类型: 默认</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+          <clashresult name="碰撞4" guid="e5de8855-c9f3-4d32-812d-ab16d802d8ce" href="4个碰撞_files\cd000004.jpg" status="new" distance="-0.175">
+            <description>硬碰撞</description>
+            <resultstatus>新建</resultstatus>
+            <clashpoint>
+              <pos3f x="-6.282" y="-0.701" z="2.705"/>
+            </clashpoint>
+            <createddate>
+              <date year="2020" month="3" day="31" hour="6" minute="51" second="0"/>
+            </createddate>
+            <clashobjects>
+              <clashobject>
+                <objectattribute>
+                  <name>元素 ID</name>
+                  <value>313092</value>
+                </objectattribute>
+                <layer>标高 1</layer>
+                <smarttags>
+                  <smarttag>
+                    <name>项目 名称</name>
+                    <value>基本墙</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>项目 类型</name>
+                    <value>墙: 基本墙: 常规 - 200mm</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+              <clashobject>
+                <objectattribute>
+                  <name>元素 ID</name>
+                  <value>313586</value>
+                </objectattribute>
+                <layer>标高 3</layer>
+                <smarttags>
+                  <smarttag>
+                    <name>项目 名称</name>
+                    <value>管道类型</value>
+                  </smarttag>
+                  <smarttag>
+                    <name>项目 类型</name>
+                    <value>管道: 管道类型: 默认</value>
+                  </smarttag>
+                </smarttags>
+              </clashobject>
+            </clashobjects>
+          </clashresult>
+        </clashresults>
+      </clashtest>
+    </clashtests>
+    <selectionsets/>
+  </batchtest>
+</exchange>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
+  <meta charset="utf-8">
+  <!-- The Viewer CSS -->
+    <link rel="stylesheet" href="lib/style.css" type="text/css">
+  <title>bimfish</title>
+    <!-- The Viewer JS -->
+    <script src="lib/viewer3D.js"></script>
+    <script src="lib/Matcal.js"></script>
+    <script src="Bimfish.js"></script>
+    <!-- thirdpard js -->
+    <script src="thirdpart/jquery/jquery.min.js"></script>
+    <script src="thirdpart/snap/snap.svg-min.js"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+    #viewer-local {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      background-color: #F0F8FF;
+    }
+    
+    .normal{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+    }
+    
+    #viewer-local{
+      height: 100%;
+            width: 50%;
+            margin: 0;
+            flex: 1;
+            background-color: #F0F8FF;
+            position: relative;
+    }
+
+    #viewer-local2d{
+      height: 100%;
+            width: 50%;
+            margin: 0;
+            flex: 1;
+            background-color: #F0F8FF;
+            position: relative;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="normal">
+    <div id="viewer-local"></div>
+    <div id="viewer-local2d"></div>
+  </div>
+
+  <script type="text/javascript">
+      let key = '465758F8f2B54E72b6956A8ba3625a73';
+      let secret = '5De5712e99b0435AB47a41673B2B1F97faf51014C47041fB97cc12c1bEb7b185';
+
+      let click = -1; // 点击哪个视图:-1 都未点击 0:2维被点击 1:3维被点击
+
+      window.onload = function(){
+        bimfishApp = new BimfishApp('viewer-local', key, secret);
+        bimfishApp.init((viewer) => {
+          bimfishApp.showModel([
+            {id:1, modelUrl:'./3d/3d.svf'},
+          ])
+
+          bimfishApp.viewer.addEventListener("selection", (evt) => {
+              const dbidArray = evt.dbIdArray[0];
+              const model2 = bimfishApp2d.findModelByid(1);
+			  const model = bimfishApp.findModelByid(1);
+              if(click!== 0){
+				bimfishApp.getGuidBydbID(dbidArray,model,function(error,guid){
+					bimfishApp2d.select([guid]);
+					bimfishApp2d.fitViewByGUID(guid);
+				})
+                
+              }
+              //bimfishApp2d.fitViewByDbid([dbidArray], model);
+          });
+          
+          var eventTool = new BimfishApp.EventTool(bimfishApp.viewer);
+          eventTool.activate();
+          eventTool.on('singleclick', (event) => {
+            click = 1; // 2d 点击
+          })
+          
+        })
+
+        bimfishApp2d = new BimfishApp('viewer-local2d', key, secret);
+        bimfishApp2d.init((viewer) => {
+          bimfishApp2d.showModel([
+            {id:1, modelUrl:'./2d/primaryGraphics.f2d'},
+          ])
+
+          bimfishApp2d.viewer.addEventListener("selection", (evt) => {
+		  console.log(evt)
+              const dbidArray = evt.dbIdArray[0];
+              const model = bimfishApp.findModelByid(1);
+			  const model2 = bimfishApp2d.findModelByid(1);
+              if(click!==1){
+			  bimfishApp2d.getGuidBydbID(dbidArray,model2,function(error,guid){
+					bimfishApp.select([guid]);
+					bimfishApp.fitViewByGUID(guid);
+				})
+				
+               // bimfishApp.selectByDbid(dbidArray, model);
+				//bimfishApp.fitViewByDbid([dbidArray], model);  
+              }
+              //bimfishApp.fitViewByDbid([dbidArray], model);  
+          });
+
+          var eventTool2d = new BimfishApp.EventTool(bimfishApp2d.viewer);
+          eventTool2d.activate();
+          eventTool2d.on('singleclick', (event) => {
+            click = 0; // 2d 点击
+          })
+        })
+      }
+  </script>
+</body>
+</html>

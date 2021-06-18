@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
+  <meta charset="utf-8">
+  <!-- The Viewer CSS -->
+    <link rel="stylesheet" href="lib/style.css" type="text/css">
+  <title>bimfish</title>
+    <!-- The Viewer JS -->
+    <script src="lib/viewer3D.js"></script>
+    <script src="lib/Matcal.js"></script>
+    <script src="Bimfish.js"></script>
+    <!-- thirdpard js -->
+    <script src="thirdpart/jquery/jquery.min.js"></script>
+    <script src="thirdpart/snap/snap.svg-min.js"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+    #viewer-local {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      background-color: #F0F8FF;
+    }
+  </style>
+</head>
+<body>
+  <div id="viewer-local"></div>
+  <script type="text/javascript">
+      let key = '465758F8f2B54E72b6956A8ba3625a73';
+      let secret = '5De5712e99b0435AB47a41673B2B1F97faf51014C47041fB97cc12c1bEb7b185';
+      window.onload = function(){
+        bimfishApp = new BimfishApp('viewer-local', key, secret);
+        bimfishApp.init((viewer) => {
+          bimfishApp.showModel([
+            {id:1, modelUrl:'https://bimfish63.oss-cn-hangzhou.aliyuncs.com/models/zhongxin/1f2f3f/3d.svf'},
+          ])
+        })
+      }
+  </script>
+</body>
+</html>

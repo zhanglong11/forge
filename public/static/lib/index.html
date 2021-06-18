@@ -1,0 +1,66 @@
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <script src="./viewer3D.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+        }
+        #MyViewerDiv {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-color: #F0F8FF;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="MyViewerDiv"></div>
+
+    <script type="text/javascript">
+        var viewer;
+        var options = {
+            env: 'Local'
+        };
+
+        Bimfish.Viewing.Initializer(options, function() {
+
+            var viewerDiv = document.getElementById('MyViewerDiv');
+            viewer = new Bimfish.Viewing.GuiViewer3D(viewerDiv, {
+                theme:'bim-theme',
+                loaderExtensions: { svf: "Bimfish.MemoryLimited" }
+            });
+            var startedCode = viewer.start();
+            if (startedCode > 0) {
+                console.error('Failed to create a Viewer: WebGL not supported.');
+                return;
+            }
+
+            viewer.initialize();
+                        
+            viewer.loadModel('./models/14999/Resource/三维视图/3D/3D.svf', 
+                {
+                    loadOptions:{applyRefPoint:true},
+                    globalOffset:{x:0,y:0,z:0},
+                    consolidationMemoryLimit: 10000 * 1024 * 1024
+                }, 
+                onLoadModelSuccess, 
+                onLoadModelError);
+            
+        });
+
+        function onLoadModelSuccess(model) {
+            console.log('onLoadModelSuccess()!');
+
+        }
+
+        function onLoadModelError(viewerErrorCode) {
+            console.error('onLoadModelError() - errorCode:' + viewerErrorCode);
+        }
+
+    </script>
+</body>
